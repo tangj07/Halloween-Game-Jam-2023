@@ -38,8 +38,12 @@ public class Punch : MonoBehaviour
     [SerializeField] float stickTime;
 
     [Header("Animation")]
-    [SerializeField] Animator animator;
     [SerializeField] AnimtorEvents events;
+
+    [Header("JUICE")]
+    [SerializeField] float slowTimeScale;
+    [SerializeField] float slowTime;
+    [SerializeField] AnimationCurve speedUpTimeCurve;
 
     private PunchStates holdState;
     private enum PunchStates
@@ -59,6 +63,9 @@ public class Punch : MonoBehaviour
 
     private int punchCounter;
 
+
+    // Juice variables
+    private Coroutine slowCo;
 
     // Start is called before the first frame update
     void Start()
@@ -113,6 +120,12 @@ public class Punch : MonoBehaviour
     public void PunchEvent()
     {
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll((Vector2)this.transform.position + (player.FacingRight ? checkOffset : new Vector2(-checkOffset.x, checkOffset.y)), checkRect, 0, enemyLayer);
+        
+        if(hitEnemies.Length > 0 )
+        {
+            SlowTime();
+        }
+        
         for (int i = 0; i < hitEnemies.Length; i++)
         {
             // Apply current effects to punch-e's
@@ -121,6 +134,15 @@ public class Punch : MonoBehaviour
             // Apply normal punch logic 
             CommonPunch(hitEnemies[i]);
         }
+    }
+
+    private void SlowTime()
+    {
+        if (slowCo != null)
+            StopCoroutine(slowCo);
+
+
+        slowCo = StartCoroutine(SlowTimeIEnum(slowTime));
     }
 
     /// <summary>
@@ -241,5 +263,21 @@ public class Punch : MonoBehaviour
     private void DrawCheckRect(Vector2 offset, Vector2 rect)
     {
         Gizmos.DrawWireCube((Vector2)this.transform.position + offset, rect);
+    }
+
+    private IEnumerator SlowTimeIEnum(float time)
+    {
+        float timer = time;
+
+        while(timer > 0)
+        {
+            float lerp = timer / time;
+            Time.timeScale = Mathf.Lerp(slowTimeScale, 1, speedUpTimeCurve.Evaluate(lerp));
+
+            timer -= Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        Time.timeScale = 1;
     }
 }
