@@ -23,6 +23,9 @@ public class Player : MonoBehaviour
     private float currentUnitSpeed; // Percent of speed 
     private float currentSpeed;
 
+    public bool FacingRight { get { return isFacingRight; } }
+    //public Vector2 GetDir { get { return isFacingRight ? Vector2.right : Vector2.left; } }
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
