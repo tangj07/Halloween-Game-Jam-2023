@@ -14,6 +14,23 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float reboundForceVerticalMin;
     [SerializeField] float reboundForceVerticalMax;
 
+    [Header("Death")]
+    [SerializeField] float fallG;
+    [SerializeField] float fallDrag;
+    [SerializeField] float upwardForceMin;
+    [SerializeField] float upwardForceMax;
+    [SerializeField] SpriteRenderer spriteRenderer;
+
+    [SerializeField] Vector3 targetScale;
+    [SerializeField] float changeRateScale;
+    [SerializeField] AnimationCurve scaleCurve;
+    [SerializeField] float angleMin = -20.0f;
+    [SerializeField] float angleMax = 20.0f;
+    [SerializeField] float changeRateRot;
+    [SerializeField] AnimationCurve rotCurve;
+    [SerializeField] Color colorTint;
+    [SerializeField] float changeRateColor;
+
     private Rigidbody2D rb;
     private Player player;
 
@@ -24,6 +41,7 @@ public class EnemyController : MonoBehaviour
 
     private bool isKnocked;
     private bool knockedRight;
+    private bool dead;
 
     private Coroutine knockCo;
 
@@ -37,7 +55,7 @@ public class EnemyController : MonoBehaviour
     {
         //rb.AddForce((player.transform.position - this.transform.position).normalized * moveForce);
         
-        if(!isKnocked)
+        if(!isKnocked && !dead)
         {
             Move();
         }
@@ -74,6 +92,9 @@ public class EnemyController : MonoBehaviour
 
     public void GetHit(float knockBack, Vector2 dir)
     {
+        if (dead)
+            return;
+
         if(isKnocked)
         {
             // Reset time knocked if hit again 
@@ -82,6 +103,20 @@ public class EnemyController : MonoBehaviour
 
         rb.AddForce(knockBack * dir, ForceMode2D.Impulse);
         health -= 1;
+
+        if(health <= 0)
+        {
+            dead = true;
+
+            this.GetComponent<Collider2D>().enabled = false;
+            rb.gravityScale = fallG;
+            rb.drag = fallDrag;
+            rb.AddForce(Vector2.up * Random.Range(upwardForceMin, upwardForceMax), ForceMode2D.Impulse);
+
+            StartCoroutine(DeathIEnumScale(changeRateScale, targetScale));
+            StartCoroutine(DeathIEnumRot(changeRateRot, Random.Range(angleMin, angleMax)));
+            StartCoroutine(DeathIEnumColor(changeRateColor, colorTint));
+        }
 
         knockCo = StartCoroutine(KnockIEnum());
         isKnocked = true;
@@ -136,5 +171,49 @@ public class EnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(knockTime);
         isKnocked = false;
+    }
+
+    private IEnumerator DeathIEnumScale(float rate, Vector3 target)
+    {
+        Vector3 startScale = this.transform.localScale;
+
+        float lerp = 0.0f;
+        while(lerp <= 1.0f)
+        {
+
+            this.transform.localScale = Vector3.Lerp(startScale, target, scaleCurve.Evaluate(lerp));
+
+            lerp += rate * Time.deltaTime;
+            yield return null; 
+        }
+    }
+
+    private IEnumerator DeathIEnumRot(float rate, float target)
+    {
+        float startRot = this.transform.eulerAngles.z;
+
+        float lerp = 0.0f;
+        while (lerp <= 1.0f)
+        {
+
+            this.transform.eulerAngles = new Vector3(0, 0, Mathf.Lerp(startRot, target, rotCurve.Evaluate(lerp)));
+
+            lerp += rate * Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    private IEnumerator DeathIEnumColor(float rate, Color target)
+    {
+        Color startColor = spriteRenderer.color;
+        float lerp = 0.0f;
+        while (lerp <= 1.0f)
+        {
+
+            spriteRenderer.color = Color.Lerp(startColor, target, lerp);
+
+            lerp += rate * Time.deltaTime;
+            yield return null;
+        }
     }
 }
