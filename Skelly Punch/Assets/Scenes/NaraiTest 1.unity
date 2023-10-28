@@ -1539,6 +1539,7 @@ MonoBehaviour:
   airborneSpeedUpRate: 3
   airborneSpeedDownRate: 2
   jumpForce: 60
+  sprite: {fileID: 0}
 --- !u!70 &1530047784
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1632,6 +1633,8 @@ MonoBehaviour:
   pumpkinTimeDelayMax: 0
   speedyKnockBackMag: 0
   stickTime: 0
+  animator: {fileID: 0}
+  events: {fileID: 0}
 --- !u!1 &1718126838
 GameObject:
   m_ObjectHideFlags: 0
