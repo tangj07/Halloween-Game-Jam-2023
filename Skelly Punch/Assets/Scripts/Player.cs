@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] float jumpForce;
 
+    [SerializeField] Transform sprite;
+
     private Rigidbody2D rb;
 
     private bool isGrounded;
@@ -35,6 +37,9 @@ public class Player : MonoBehaviour
     {
         PhysicsMovePlayer();
         SquishSquashPlayer();
+
+        // Just update direction 
+        sprite.right = isFacingRight ? Vector3.right : Vector3.left;
     }
 
 
