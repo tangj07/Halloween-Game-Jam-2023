@@ -57,11 +57,11 @@ public class Punch : MonoBehaviour
     private const int STATECOUNT = 5;
     private enum PunchStates
     {
-        None,
-        AOE,
-        PumpkinDropper,
-        Speed,
-        Web
+        None = 0,
+        AOE = 1,
+        PumpkinDropper = 2,
+        Speed = 3,
+        Web = 4
     }
 
     // How much knockback 
@@ -106,9 +106,15 @@ public class Punch : MonoBehaviour
         // Swap when counter goes down 
         if(punchCounter <= 0)
         {
+            // Change to next state 
             GetNextState(punchState);
             punchCounter = punchesBeforeChange;
+
+            // Update counter 
             punchCountDownMesh.text = (punchCounter).ToString();
+
+            // Set new texture 
+            events.ChangePunchTypeState((float)punchState / STATECOUNT);
         }
 
         PunchLogic();
