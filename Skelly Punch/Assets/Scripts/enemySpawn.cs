@@ -18,7 +18,7 @@ public class enemySpawn : MonoBehaviour
     [SerializeField]
     Vector3 spawnPoint4 = Vector3.zero;
 
-    public float idkyet =0;
+    public float gameTime =0;
     public float timeChange = 2f; //2 sec for now
     public float timeBetweenSpawn =4f; //gradually gets smaller 
     public float amountTimeChange = 0.05f;
@@ -76,12 +76,17 @@ public class enemySpawn : MonoBehaviour
             }
         }
     }
+    //method for when the enemy spawns and jumps onto the game screen
+    void jump(){
+        
+        
+    }
     // Update is called once per frame
     void Update()
     {
        //update time and count 
-       idkyet = Time.time;
-        int temp = (int)idkyet;
+       gameTime = Time.time;
+        int temp = (int)gameTime;
         if(Time.time >= nextTime)
         {
             if (temp % timeChange == 0 && timeBetweenSpawn > minTime)
