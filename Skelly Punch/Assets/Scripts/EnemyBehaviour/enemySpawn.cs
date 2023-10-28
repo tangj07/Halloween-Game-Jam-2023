@@ -23,9 +23,9 @@ public class enemySpawn : MonoBehaviour
     public float timeBetweenSpawn =4f; //gradually gets smaller 
     public float amountTimeChange = 0.05f;
     float minTime = 0.5f;
-    public int spawnCount =2, spawnCountTime =10; //gradually gets bigger start 1 and add 1 during change
-    GameObject tempObj = new GameObject();
-    int interval=1;
+    public int spawnCount =2, spawnCountTime =10, maxSpawn=10; //gradually gets bigger start 1 and add 1 during change
+    public float jumpDistanceX =5;
+    GameObject tempObj;
     float nextTime=0;
     // Start is called before the first frame update
     void Start()
@@ -34,25 +34,27 @@ public class enemySpawn : MonoBehaviour
     }
     void Spawn()
     {
-        float point = UnityEngine.Random.Range(0, 3);
+        float point = UnityEngine.Random.Range(0, 4);
         Vector3 tempPoint = Vector3.zero;
         switch (point)
         {
+            //1 and 2 left
             case 0:
-                tempPoint = spawnPoint1;
+                tempPoint = new Vector3(spawnPoint1.x-jumpDistanceX,spawnPoint1.y);
                 break;
             case 1:
-                tempPoint = spawnPoint2;
+                tempPoint = new Vector3(spawnPoint2.x - jumpDistanceX, spawnPoint2.y);
                 break;
+            //3 and 4 right
             case 2:
-                    tempPoint = spawnPoint3;
+                tempPoint = new Vector3(spawnPoint3.x + jumpDistanceX, spawnPoint3.y);
                 break;  
             case 3:
-                    tempPoint = spawnPoint4;
+                tempPoint = new Vector3(spawnPoint4.x + jumpDistanceX, spawnPoint4.y);
                 break;
 
         }
-        float enemyType = UnityEngine.Random.Range(0, 1);
+        float enemyType = UnityEngine.Random.Range(0, 2);
         
         switch (enemyType)
         {
@@ -76,28 +78,24 @@ public class enemySpawn : MonoBehaviour
             }
         }
     }
-    //method for when the enemy spawns and jumps onto the game screen
-    void jump(){
-        
-        
-    }
     // Update is called once per frame
     void Update()
     {
        //update time and count 
        gameTime = Time.time;
         int temp = (int)gameTime;
-        if(Time.time >= nextTime)
+        if(gameTime >= nextTime)
         {
             if (temp % timeChange == 0 && timeBetweenSpawn > minTime)
             {
                 timeBetweenSpawn -= amountTimeChange;
             }
-            if (temp % spawnCountTime == 0)
+            if (temp % spawnCountTime == 0&& spawnCount<maxSpawn)
             {
                 spawnCount++;
             }
-            nextTime += interval;
+            nextTime += 1;
+            Debug.Log(temp+ " "+nextTime);
         }
        
     }
