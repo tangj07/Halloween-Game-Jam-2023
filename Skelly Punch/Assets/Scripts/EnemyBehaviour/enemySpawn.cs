@@ -95,7 +95,6 @@ public class enemySpawn : MonoBehaviour
                 spawnCount++;
             }
             nextTime += 1;
-            Debug.Log(temp+ " "+nextTime);
         }
        
     }

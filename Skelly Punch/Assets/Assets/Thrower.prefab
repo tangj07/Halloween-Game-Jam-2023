@@ -235,3 +235,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 4802591353132844553, guid: 34ad02e79ad6e6a44a3c1e9f2ee96008, type: 3}
+  timeToThrow: 1

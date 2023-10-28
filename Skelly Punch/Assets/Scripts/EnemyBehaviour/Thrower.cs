@@ -8,18 +8,14 @@ public class Thrower : MonoBehaviour
     GameObject projectile;
     [SerializeField]
     float timeToThrow;
-
     void Throw()
     {
-        if (projectile != null)
-        {
-            Instantiate(projectile, gameObject.transform.position,transform.rotation);
-        }
+        Instantiate(projectile, gameObject.transform.position,Quaternion.identity);
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(ThrowDelay());
     }
 
     // Update is called once per frame
@@ -29,7 +25,10 @@ public class Thrower : MonoBehaviour
     }
     IEnumerator ThrowDelay()
     {
-        yield return new WaitForSeconds(timeToThrow);
-
+        while (true)
+        {
+            yield return new WaitForSeconds(timeToThrow);
+            Throw();
+        }
     }
 }
