@@ -188,10 +188,6 @@ public class Punch : MonoBehaviour
 
                 CommonPunch(explosionHits[e]);
             }
-            else
-            {
-                print("Already getting hit");
-            }
         }
     }
 
