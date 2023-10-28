@@ -274,15 +274,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy1: {fileID: 3434476306707383048, guid: 1607fec6175b01b45a0b2dc96fe66401, type: 3}
-  enemy2: {fileID: 0}
-  spawnPoint1: {x: -5.08, y: -1.84, z: 0}
-  spawnPoint2: {x: 0, y: 0, z: 0}
-  spawnPoint3: {x: 0, y: 0, z: 0}
-  spawnPoint4: {x: 0, y: 0, z: 0}
+  enemy2: {fileID: 3434476306707383048, guid: a29841a41cbc25a4ba4a8093820c91e5, type: 3}
+  spawnPoint1: {x: -6, y: -2, z: 0}
+  spawnPoint2: {x: -6, y: 2, z: 0}
+  spawnPoint3: {x: 6, y: 2, z: 0}
+  spawnPoint4: {x: 6, y: -2, z: 0}
   idkyet: 0
   timeChange: 2
   timeBetweenSpawn: 4
-  amountTimeChange: 0.0005
+  amountTimeChange: 0.05
+  spawnCount: 2
+  spawnCountTime: 10
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
