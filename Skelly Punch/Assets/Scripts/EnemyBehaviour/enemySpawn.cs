@@ -6,7 +6,7 @@ using UnityEngine;
 public class enemySpawn : MonoBehaviour
 {
     [SerializeField]
-    GameObject enemy1;//skellotin
+    GameObject enemy1;//mummy
     [SerializeField] 
     GameObject enemy2;//zombie
     [SerializeField]

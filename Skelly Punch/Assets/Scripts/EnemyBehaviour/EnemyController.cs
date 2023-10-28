@@ -41,6 +41,7 @@ public class EnemyController : MonoBehaviour
         {
             Move();
         }
+        
     }
 
     private void Move()
