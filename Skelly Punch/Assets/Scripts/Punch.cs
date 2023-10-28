@@ -4,6 +4,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor.PackageManager;
 using UnityEngine;
+using Cinemachine;
 
 public class Punch : MonoBehaviour
 {
@@ -44,6 +45,9 @@ public class Punch : MonoBehaviour
     [SerializeField] float slowTimeScale;
     [SerializeField] float slowTime;
     [SerializeField] AnimationCurve speedUpTimeCurve;
+    [Space]
+    [SerializeField] CinemachineImpulseSource imp;
+    [SerializeField] float impForce;
 
     private PunchStates holdState;
     private enum PunchStates
@@ -121,9 +125,13 @@ public class Punch : MonoBehaviour
     {
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll((Vector2)this.transform.position + (player.FacingRight ? checkOffset : new Vector2(-checkOffset.x, checkOffset.y)), checkRect, 0, enemyLayer);
         
-        if(hitEnemies.Length > 0 )
+        // Airborne hit 
+        if(hitEnemies.Length > 0)
         {
-            SlowTime();
+            if(!player.Grounded)
+                SlowTime();
+
+            imp.GenerateImpulse(impForce);
         }
         
         for (int i = 0; i < hitEnemies.Length; i++)

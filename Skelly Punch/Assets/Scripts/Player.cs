@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     private float currentSpeed;
     public bool FacingRight { get { return isFacingRight; } }
     //public Vector2 GetDir { get { return isFacingRight ? Vector2.right : Vector2.left; } }
+    public bool Grounded { get { return isGrounded; } }
 
     void Start()
     {
