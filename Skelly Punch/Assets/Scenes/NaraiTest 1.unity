@@ -1625,7 +1625,7 @@ MonoBehaviour:
   player: {fileID: 1530047783}
   punchState: 0
   punchesBeforeChange: 0
-  AOEVisual: {fileID: 0}
+  AOEVisual: {fileID: 971632773586075660, guid: 87356088f06b24e499b3adfc83af9e34, type: 3}
   AOERange: 2
   AOEKnockBackMag: 0
   pumpkinTimeDelayMin: 0
