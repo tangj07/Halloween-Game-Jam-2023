@@ -645,7 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e503ac0fd2c5ebf4eb7ff791c80d56d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 100
   idealSpeed: 2
   speedUpRate: 1
   knockTime: 1
@@ -1112,6 +1112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1451317498}
   - component: {fileID: 1451317499}
+  - component: {fileID: 1451317500}
   m_Layer: 0
   m_Name: DamageBox
   m_TagString: Untagged
@@ -1163,7 +1164,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 1}
@@ -1179,6 +1180,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1.8}
   m_EdgeRadius: 0
+--- !u!114 &1451317500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451317497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98369f2fc8416034989939f33cdbb757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1494240008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,10 +1435,20 @@ MonoBehaviour:
     m_Bits: 256
   checkOffset: {x: 0.72, y: 1}
   checkRect: {x: 1.28, y: 1.18}
-  knockBackMag: 40
+  knockBackMagCommon: 40
   knockbackMinDir: {x: 1, y: 0.5}
   knockbackMaxDir: {x: 1, y: 2}
+  normalPunchCooldown: 0.1
   player: {fileID: 1530047783}
+  punchState: 0
+  punchesBeforeChange: 0
+  AOEVisual: {fileID: 971632773586075660, guid: 87356088f06b24e499b3adfc83af9e34, type: 3}
+  AOERange: 5
+  AOEKnockBackMag: 60
+  pumpkinTimeDelayMin: 0
+  pumpkinTimeDelayMax: 0
+  speedyKnockBackMag: 80
+  stickTime: 0
 --- !u!1 &1676142901
 GameObject:
   m_ObjectHideFlags: 0
