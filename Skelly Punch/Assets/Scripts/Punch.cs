@@ -4,6 +4,8 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor.PackageManager;
 using UnityEngine;
+using Cinemachine;
+using TMPro;
 
 public class Punch : MonoBehaviour
 {
@@ -44,10 +46,18 @@ public class Punch : MonoBehaviour
     [SerializeField] float slowTimeScale;
     [SerializeField] float slowTime;
     [SerializeField] AnimationCurve speedUpTimeCurve;
+    [Space]
+    [SerializeField] CinemachineImpulseSource imp;
+    [SerializeField] float impForce;
+
+    [Header("Display")]
+    [SerializeField] TextMeshProUGUI punchCountDownMesh;
 
     private PunchStates holdState;
+    private const int STATECOUNT = 5;
     private enum PunchStates
     {
+        None,
         AOE,
         PumpkinDropper,
         Speed,
@@ -76,7 +86,10 @@ public class Punch : MonoBehaviour
 
         knockBackMag = knockBackMagCommon;
         punchCoolDown = normalPunchCooldown;
+        punchCounter = punchesBeforeChange;
 
+
+        punchCountDownMesh.text = (punchCounter).ToString();
         SwapPunchState(punchState);
     }
 
@@ -88,6 +101,14 @@ public class Punch : MonoBehaviour
         {
             SwapPunchState(punchState);
             holdState = punchState;
+        }
+
+        // Swap when counter goes down 
+        if(punchCounter <= 0)
+        {
+            GetNextState(punchState);
+            punchCounter = punchesBeforeChange;
+            punchCountDownMesh.text = (punchCounter).ToString();
         }
 
         PunchLogic();
@@ -121,9 +142,19 @@ public class Punch : MonoBehaviour
     {
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll((Vector2)this.transform.position + (player.FacingRight ? checkOffset : new Vector2(-checkOffset.x, checkOffset.y)), checkRect, 0, enemyLayer);
         
-        if(hitEnemies.Length > 0 )
+       
+        if(hitEnemies.Length > 0)
         {
-            SlowTime();
+            // Airborne hit slows time 
+            if (!player.Grounded)
+                SlowTime();
+
+            // Cam shake 
+            imp.GenerateImpulse(impForce);
+
+            // Update the counter 
+            punchCounter--;
+            punchCountDownMesh.text = (punchCounter).ToString();
         }
         
         for (int i = 0; i < hitEnemies.Length; i++)
@@ -228,6 +259,11 @@ public class Punch : MonoBehaviour
         }
     }
 
+    private void ApplyWeb(Collider2D[] hits)
+    {
+
+    }
+
     /// <summary>
     /// When swapping a punch effect is there any necessary cleaup
     /// </summary>
@@ -247,6 +283,20 @@ public class Punch : MonoBehaviour
             case PunchStates.Web:
                 break;
         }
+    }
+
+
+    private void GetNextState(PunchStates avoid)
+    {
+        int indexToAvoid = ((int)avoid);
+
+        int rand;
+        do
+        {
+            rand = Random.Range(0, STATECOUNT);
+        } while (rand == indexToAvoid);
+
+        punchState = (PunchStates)rand;
     }
 
     private void OnDrawGizmos()
