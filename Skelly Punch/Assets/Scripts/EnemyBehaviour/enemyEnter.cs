@@ -13,7 +13,6 @@ public class Enemy : MonoBehaviour
     void Start()
     {
            startPosition = gameObject.transform.position;
-        
     }
 
     // Update is called once per frame
@@ -30,10 +29,10 @@ public class Enemy : MonoBehaviour
             {
                 direction = -1 * jumpDistanceX;
             }
-           //if (startPosition.y < 0)//needs to jump higher
-           //{
-           //    jumpDistanceY += jumpDistanceY * 1.1f;
-           //}
+           if (startPosition.y < 0)//needs to jump higher
+           {
+               jumpDistanceY += jumpDistanceY * 1.0001f;
+           }
             rb.AddForce(new Vector3(direction, jumpDistanceY), ForceMode2D.Impulse);
             jumpIn = false;
         }
