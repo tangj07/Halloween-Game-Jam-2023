@@ -1348,11 +1348,11 @@ MonoBehaviour:
   spawnPoint3: {x: 8, y: -1, z: 0}
   spawnPoint4: {x: 8, y: -4, z: 0}
   gameTime: 0
-  timeChange: 2
+  timeChange: 5
   timeBetweenSpawn: 4
   amountTimeChange: 0.05
   spawnCount: 2
-  spawnCountTime: 10
+  spawnCountTime: 15
   maxSpawn: 10
   jumpDistanceX: 5
 --- !u!1 &1494240008
@@ -1618,10 +1618,20 @@ MonoBehaviour:
     m_Bits: 256
   checkOffset: {x: 0.72, y: 1}
   checkRect: {x: 1.28, y: 1.18}
-  knockBackMag: 40
+  knockBackMagCommon: 0
   knockbackMinDir: {x: 1, y: 0.5}
   knockbackMaxDir: {x: 1, y: 2}
+  normalPunchCooldown: 0
   player: {fileID: 1530047783}
+  punchState: 0
+  punchesBeforeChange: 0
+  AOEVisual: {fileID: 0}
+  AOERange: 2
+  AOEKnockBackMag: 0
+  pumpkinTimeDelayMin: 0
+  pumpkinTimeDelayMax: 0
+  speedyKnockBackMag: 0
+  stickTime: 0
 --- !u!1 &1718126838
 GameObject:
   m_ObjectHideFlags: 0

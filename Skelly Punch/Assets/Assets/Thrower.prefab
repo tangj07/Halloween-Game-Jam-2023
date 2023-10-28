@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 608402744082137718}
   - component: {fileID: 8165801233496575959}
   - component: {fileID: 6168101598219736489}
-  - component: {fileID: 8432308215302693852}
-  - component: {fileID: 2983988902421934916}
-  - component: {fileID: 8418578766098623954}
-  - component: {fileID: 1338749413519383656}
+  - component: {fileID: 7043622513711472254}
+  - component: {fileID: -5159971150671642362}
+  - component: {fileID: 4695284799956389830}
+  - component: {fileID: 8035314550969040865}
+  - component: {fileID: -4267472576937384958}
   m_Layer: 8
-  m_Name: Enemy1
+  m_Name: Thrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +88,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8432308215302693852
+--- !u!114 &7043622513711472254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,14 +100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19796e294341d8f489b55c4762d4bcfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 2983988902421934916}
+  rb: {fileID: -5159971150671642362}
   jumpIn: 1
   startPosition: {x: 0, y: 0, z: 0}
   direction: 0
-  end: 0
   enterStart: -4
   enterEnd: 4
---- !u!50 &2983988902421934916
+--- !u!50 &-5159971150671642362
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -133,7 +133,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &8418578766098623954
+--- !u!61 &4695284799956389830
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,7 +178,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1338749413519383656
+--- !u!114 &8035314550969040865
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,3 +198,40 @@ MonoBehaviour:
   reboundForceHorizontalMax: 50
   reboundForceVerticalMin: 30
   reboundForceVerticalMax: 40
+  fallG: 0
+  fallDrag: 0
+  upwardForceMin: 0
+  upwardForceMax: 0
+  spriteRenderer: {fileID: 0}
+  targetScale: {x: 0, y: 0, z: 0}
+  changeRateScale: 0
+  scaleCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  angleMin: -20
+  angleMax: 20
+  changeRateRot: 0
+  rotCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  colorTint: {r: 0, g: 0, b: 0, a: 0}
+  changeRateColor: 0
+--- !u!114 &-4267472576937384958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3434476306707383048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee696a528fb73eb4eb871e7f4934c3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 4802591353132844553, guid: 34ad02e79ad6e6a44a3c1e9f2ee96008, type: 3}

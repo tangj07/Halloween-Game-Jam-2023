@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class Thrower : MonoBehaviour
 {
+    [SerializeField]
+    GameObject projectile;
+    [SerializeField]
+    float timeToThrow;
+
+    void Throw()
+    {
+        if (projectile != null)
+        {
+            Instantiate(projectile, gameObject.transform.position,transform.rotation);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +26,10 @@ public class Thrower : MonoBehaviour
     void Update()
     {
         
+    }
+    IEnumerator ThrowDelay()
+    {
+        yield return new WaitForSeconds(timeToThrow);
+
     }
 }
