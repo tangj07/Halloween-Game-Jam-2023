@@ -756,9 +756,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '10
-
-'
+  m_text: 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8cac1a4bfb78d1c449cd3ea58a18c9d0, type: 2}
   m_sharedMaterial: {fileID: 6712478749981537408, guid: 8cac1a4bfb78d1c449cd3ea58a18c9d0, type: 2}
@@ -2336,17 +2334,9 @@ PrefabInstance:
       value: Skelly
       objectReference: {fileID: 0}
     - target: {fileID: 5201674018376116993, guid: e3c8136b5a242c64e9bca2a0dc1533c8, type: 3}
-      propertyPath: punchState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201674018376116993, guid: e3c8136b5a242c64e9bca2a0dc1533c8, type: 3}
       propertyPath: punchCountDownMesh
       value: 
       objectReference: {fileID: 563195647}
-    - target: {fileID: 5201674018376116993, guid: e3c8136b5a242c64e9bca2a0dc1533c8, type: 3}
-      propertyPath: punchesBeforeChange
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

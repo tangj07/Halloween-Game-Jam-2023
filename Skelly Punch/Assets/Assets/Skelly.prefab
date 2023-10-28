@@ -82,8 +82,8 @@ MonoBehaviour:
   knockbackMaxDir: {x: 1, y: 2}
   normalPunchCooldown: 0.1
   player: {fileID: 8797907268076715620}
-  punchState: 1
-  punchesBeforeChange: 0
+  punchState: 0
+  punchesBeforeChange: 5
   AOEVisual: {fileID: 971632773586075660, guid: 87356088f06b24e499b3adfc83af9e34, type: 3}
   AOERange: 5
   AOEKnockBackMag: 60
@@ -129,6 +129,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   imp: {fileID: 4169461823931899273}
   impForce: 0.1
+  punchCountDownMesh: {fileID: 0}
 --- !u!50 &2368192781927199411
 Rigidbody2D:
   serializedVersion: 4

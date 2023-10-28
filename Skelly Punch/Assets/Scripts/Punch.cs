@@ -259,6 +259,11 @@ public class Punch : MonoBehaviour
         }
     }
 
+    private void ApplyWeb(Collider2D[] hits)
+    {
+
+    }
+
     /// <summary>
     /// When swapping a punch effect is there any necessary cleaup
     /// </summary>
