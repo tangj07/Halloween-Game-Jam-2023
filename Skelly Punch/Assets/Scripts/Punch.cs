@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class Punch : MonoBehaviour
@@ -35,6 +36,10 @@ public class Punch : MonoBehaviour
     [SerializeField] float speedyKnockBackMag;
     [Space]
     [SerializeField] float stickTime;
+
+    [Header("Animation")]
+    [SerializeField] Animator animator;
+    [SerializeField] AnimtorEvents events;
 
     private PunchStates holdState;
     private enum PunchStates
@@ -93,18 +98,28 @@ public class Punch : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll((Vector2)this.transform.position + (player.FacingRight ? checkOffset : new Vector2(-checkOffset.x, checkOffset.y)), checkRect, 0, enemyLayer);
-            for (int i = 0; i < hitEnemies.Length; i++)
-            {
-                // Apply current effects to punch-e's
-                ApplyPunchEffect(punchState, hitEnemies);
-                
-                // Apply normal punch logic 
-                CommonPunch(hitEnemies[i]);
-            }
+            // Changes tanimation to true which handles when the punch
+            // will actually happen 
+            events.ChangePunchState(1);
 
             // Reset timer 
             coolDownTimer = punchCoolDown;
+        }
+    }
+
+    /// <summary>
+    /// Called during animation to indicate when the punch occurs 
+    /// </summary>
+    public void PunchEvent()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll((Vector2)this.transform.position + (player.FacingRight ? checkOffset : new Vector2(-checkOffset.x, checkOffset.y)), checkRect, 0, enemyLayer);
+        for (int i = 0; i < hitEnemies.Length; i++)
+        {
+            // Apply current effects to punch-e's
+            ApplyPunchEffect(punchState, hitEnemies);
+
+            // Apply normal punch logic 
+            CommonPunch(hitEnemies[i]);
         }
     }
 
