@@ -28,7 +28,7 @@ public class Punch : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll((Vector2)this.transform.position + (player.FacingRight ? checkOffset : -checkOffset), checkRect, 0, enemyLayer);
+            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll((Vector2)this.transform.position + (player.FacingRight ? checkOffset : new Vector2(-checkOffset.x, checkOffset.y)), checkRect, 0, enemyLayer);
             for(int i = 0; i < hitEnemies.Length; i++)
             {
                 // Get direction of knockback based on player direction 

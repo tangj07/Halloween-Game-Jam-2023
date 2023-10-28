@@ -9,6 +9,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float speedUpRate;
 
     [SerializeField] float knockTime;
+    [SerializeField] float reboundForceHorizontalMin;
+    [SerializeField] float reboundForceHorizontalMax;
+    [SerializeField] float reboundForceVerticalMin;
+    [SerializeField] float reboundForceVerticalMax;
 
     private Rigidbody2D rb;
     private Player player;
@@ -19,6 +23,7 @@ public class EnemyController : MonoBehaviour
     private float currentSpeed;
 
     private bool isKnocked;
+    private bool knockedRight;
 
     private Coroutine knockCo;
 
@@ -79,19 +84,30 @@ public class EnemyController : MonoBehaviour
 
         knockCo = StartCoroutine(KnockIEnum());
         isKnocked = true;
+        knockedRight = this.transform.position.x > player.transform.position.x;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Wall")
         {
-            rb.velocity = new Vector2(-rb.velocity.x, rb.velocity.y);
+            if(isKnocked)
+            {
+                rb.AddForce((knockedRight ? Vector2.left : Vector2.right) * Random.Range(reboundForceHorizontalMin, reboundForceHorizontalMax), ForceMode2D.Impulse);
+            }
+            
+            //rb.velocity = new Vector2(-rb.velocity.x * 3.0f, rb.velocity.y);
             return;
         }
 
         if (collision.transform.position.y < this.transform.position.y)
         {
             isGrounded = true;
+
+            if(isKnocked)
+            {
+                rb.AddForce(Vector2.up * Random.Range(reboundForceVerticalMin, reboundForceVerticalMax), ForceMode2D.Impulse);
+            }
         }
     }
 
@@ -99,7 +115,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Wall")
         {
-            rb.velocity = new Vector2(-rb.velocity.x, rb.velocity.y);
+            //rb.velocity = new Vector2(-rb.velocity.x, rb.velocity.y);
             return;
         }
 
