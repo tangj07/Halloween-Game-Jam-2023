@@ -198,30 +198,66 @@ MonoBehaviour:
   reboundForceHorizontalMax: 50
   reboundForceVerticalMin: 30
   reboundForceVerticalMax: 40
-  fallG: 0
-  fallDrag: 0
-  upwardForceMin: 0
-  upwardForceMax: 0
+  fallG: 20
+  fallDrag: 1
+  upwardForceMin: 40
+  upwardForceMax: 80
   spriteRenderer: {fileID: 0}
-  targetScale: {x: 0, y: 0, z: 0}
-  changeRateScale: 0
+  targetScale: {x: 2, y: 2, z: 1}
+  changeRateScale: 4
   scaleCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  angleMin: -20
-  angleMax: 20
-  changeRateRot: 0
+  angleMin: -40
+  angleMax: 40
+  changeRateRot: 4
   rotCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  colorTint: {r: 0, g: 0, b: 0, a: 0}
-  changeRateColor: 0
+  colorTint: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 0.6666667}
+  changeRateColor: 20
 --- !u!114 &-5638140441520311178
 MonoBehaviour:
   m_ObjectHideFlags: 0
