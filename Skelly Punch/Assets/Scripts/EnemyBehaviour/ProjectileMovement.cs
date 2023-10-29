@@ -19,7 +19,6 @@ public class projectileMovement : MonoBehaviour
     {
         player = GameObject.FindObjectOfType<Player>();
         startPosition = player.transform.position;
-        
         if (startPosition.x < 0)
         {
             direction = -1 * throwDistanceX;
@@ -28,6 +27,7 @@ public class projectileMovement : MonoBehaviour
         {
             direction = throwDistanceX;
         }
+        throwDistanceY=Random.Range(throwDistanceY-1,throwDistanceY+ 1);
         rb.AddForce(new Vector3(direction, throwDistanceY) , ForceMode2D.Impulse);
     }
 

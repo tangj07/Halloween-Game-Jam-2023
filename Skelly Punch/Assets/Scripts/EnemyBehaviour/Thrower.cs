@@ -8,9 +8,12 @@ public class Thrower : MonoBehaviour
     GameObject projectile;
     [SerializeField]
     float timeToThrow;
+    Vector3 position;
     void Throw()
     {
-        Instantiate(projectile, gameObject.transform.position,Quaternion.identity);
+        position.y += 2f;
+        position.x += 1;
+        Instantiate(projectile, position,Quaternion.identity);
     }
     // Start is called before the first frame update
     void Start()
@@ -21,7 +24,7 @@ public class Thrower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        position = gameObject.transform.position;
     }
     IEnumerator ThrowDelay()
     {
