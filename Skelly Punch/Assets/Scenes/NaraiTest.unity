@@ -700,7 +700,7 @@ GameObject:
   - component: {fileID: 764203685}
   - component: {fileID: 764203688}
   m_Layer: 8
-  m_Name: Enemy
+  m_Name: EnemyTester
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1726,10 +1726,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skelly
       objectReference: {fileID: 0}
-    - target: {fileID: 5201674018376116993, guid: e3c8136b5a242c64e9bca2a0dc1533c8, type: 3}
-      propertyPath: checkRect.y
-      value: 1.82
-      objectReference: {fileID: 0}
+    - target: {fileID: 5451024807494562001, guid: e3c8136b5a242c64e9bca2a0dc1533c8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -679538905, guid: 1159d74fc26c2ae40a48b658702ed669, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
