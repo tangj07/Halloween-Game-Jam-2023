@@ -150,7 +150,7 @@ MonoBehaviour:
   reboundForceHorizontalMax: 50
   reboundForceVerticalMin: 30
   reboundForceVerticalMax: 40
-  web: {fileID: 971632773586075660, guid: 87356088f06b24e499b3adfc83af9e34, type: 3}
+  web: {fileID: 6626328261837328723, guid: b786dc0f279d03d42b8e461bb753d60b, type: 3}
   events: {fileID: 1990612307886429061}
   damageBox: {fileID: 6743789842117184057}
   fallG: 20

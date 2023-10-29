@@ -154,7 +154,12 @@ public class EnemyController : MonoBehaviour
                 // Make unmovable 
                 rb.constraints = RigidbodyConstraints2D.FreezePosition;
                 Vector2 point = Physics2D.ClosestPoint((Vector2)this.transform.position + Vector2.up, collision.transform.GetComponent<Rigidbody2D>());
-                Instantiate(web, point, Quaternion.identity);
+                GameObject temp = Instantiate(web, point, Quaternion.identity);
+
+                if(point.x > this.transform.position.x)
+                {
+                    temp.transform.right = Vector3.left;
+                }
             }
             else if(isKnocked)
             {

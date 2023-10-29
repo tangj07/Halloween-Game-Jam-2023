@@ -40,6 +40,7 @@ public class Punch : MonoBehaviour
     [SerializeField] float speedyKnockBackMag;
     [Space]
     [SerializeField] float stickTime;
+    [SerializeField] GameObject spiderWeb;
 
     [Header("Animation")]
     [SerializeField] AnimtorEvents events;

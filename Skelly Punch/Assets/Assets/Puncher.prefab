@@ -150,7 +150,7 @@ MonoBehaviour:
   reboundForceHorizontalMax: 30
   reboundForceVerticalMin: 10
   reboundForceVerticalMax: 20
-  web: {fileID: 971632773586075660, guid: 87356088f06b24e499b3adfc83af9e34, type: 3}
+  web: {fileID: 6626328261837328723, guid: b786dc0f279d03d42b8e461bb753d60b, type: 3}
   events: {fileID: 8380623100389244982}
   damageBox: {fileID: 1189503565996110798}
   fallG: 20
@@ -399,6 +399,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8331361123468955236}
   puncher: {fileID: 0}
+  punchImpactFX: {fileID: 0}
+  punchImpactFXPos: {x: 0, y: 0, z: 0}
 --- !u!1 &5406216633869290245
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +447,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUntilHurt: 0.2
+  isProj: 0
+  timer: 0
 --- !u!61 &7201509945943465318
 BoxCollider2D:
   m_ObjectHideFlags: 0
