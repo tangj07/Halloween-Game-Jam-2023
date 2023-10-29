@@ -22,6 +22,7 @@ public class StartMenu : MonoBehaviour
                 topCam.SetActive(false);
                 inGame = false;
             }
+
         }
         else
         {
@@ -31,6 +32,11 @@ public class StartMenu : MonoBehaviour
                 botCam.SetActive(false);
                 topCam.SetActive(true);
                 inGame = true;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
             }
         }
     }
