@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    [SerializeField] float timeUntilHurt = 0.05f;
+    [SerializeField] public float timeUntilHurt = 0.05f;
+    [SerializeField] bool isProj = false;
     private GameManager manager;
 
     private void Start()
@@ -12,7 +13,22 @@ public class Damage : MonoBehaviour
         manager = GameObject.FindAnyObjectByType<GameManager>();
     }
 
-    private float timer;
+    public float timer;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        print(collision.gameObject.tag);
+        if (collision.gameObject.tag == "Player")
+        {
+            if (isProj == true)
+            {
+                timer = 0;
+                manager.EndGame();
+            }
+        }
+            
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         print(collision.gameObject.name);

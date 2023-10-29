@@ -133,6 +133,7 @@ public class EnemyController : MonoBehaviour
 
         knockCo = StartCoroutine(KnockIEnum());
         isKnocked = true;
+        damageBox.timer = damageBox.timeUntilHurt;
         damageBox.enabled = false;
 
         knockedRight = this.transform.position.x > player.transform.position.x;
