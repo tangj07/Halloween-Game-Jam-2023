@@ -19,7 +19,7 @@ public class projectileMovement : MonoBehaviour
     {
         player = GameObject.FindObjectOfType<Player>();
         startPosition = player.transform.position;
-        if (startPosition.x < 0)
+        if (startPosition.x < this.transform.position.x)
         {
             direction = -1 * throwDistanceX;
         }
@@ -28,7 +28,7 @@ public class projectileMovement : MonoBehaviour
             direction = throwDistanceX;
         }
         throwDistanceY=Random.Range(throwDistanceY-1,throwDistanceY+ 1);
-        rb.AddForce(new Vector3(direction, throwDistanceY) , ForceMode2D.Impulse);
+        rb.AddForce(new Vector3(direction, throwDistanceY), ForceMode2D.Impulse);
     }
 
     // Update is called once per frame
@@ -40,6 +40,8 @@ public class projectileMovement : MonoBehaviour
             gameObject.transform.position.y>topWall||
             gameObject.transform.position.y<bottomWall) 
         { Destroy(gameObject); }
-        
+
+
+        this.transform.right = rb.velocity.normalized;
     }
 }
