@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 4169461823931899273}
   m_Layer: 7
   m_Name: Skelly
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -452,7 +452,7 @@ Transform:
   - {fileID: 4146618310272856980}
   - {fileID: 3820962353841177473}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8797907268076715620
 MonoBehaviour:
@@ -493,8 +493,8 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  checkOffset: {x: 0.84, y: 1}
-  checkRect: {x: 1.61, y: 1.82}
+  checkOffset: {x: 1.05, y: 1}
+  checkRect: {x: 2.09, y: 1.82}
   knockBackMagCommon: 40
   knockbackMinDir: {x: 1, y: 0.5}
   knockbackMaxDir: {x: 1, y: 2}

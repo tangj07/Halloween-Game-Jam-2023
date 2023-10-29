@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     public Vector3 startPosition;
     public float direction = 1;
     public float enterStart, enterEnd;
+
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,7 @@ public class Enemy : MonoBehaviour
             {
                 jumpDistanceY += jumpDistanceY * 1.0001f;
             }
-            rb.AddForce(new Vector3(direction, jumpDistanceY), ForceMode2D.Impulse);
+            //rb.AddForce(new Vector3(direction, jumpDistanceY), ForceMode2D.Impulse);
     }
 
     // Update is called once per frame

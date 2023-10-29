@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpForce;
 
     [SerializeField] Transform sprite;
-
     private Rigidbody2D rb;
 
     private bool isGrounded;

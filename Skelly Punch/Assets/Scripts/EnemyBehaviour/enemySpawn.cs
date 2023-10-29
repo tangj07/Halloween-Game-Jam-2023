@@ -18,7 +18,6 @@ public class enemySpawn : MonoBehaviour
     [SerializeField]
     Vector3 spawnPoint4 = Vector3.zero;
     [SerializeField]
-    StartGame instance;
     public float gameTime =0;
     public float timeChange = 2f; //2 sec for now
     public float timeBetweenSpawn =4f; //gradually gets smaller 
@@ -67,18 +66,16 @@ public class enemySpawn : MonoBehaviour
                 break;
         }
         GameObject temp = Instantiate(tempObj, tempPoint, transform.rotation);
+        temp.transform.parent = this.transform;
     }
     IEnumerator TimeSpawn()
     {
         while (true)
         {
             yield return new WaitForSeconds(timeBetweenSpawn);
-            if (instance.startEverythingElse)
+            for (int i = 0; i < spawnCount; i++)
             {
-                for (int i = 0; i < spawnCount; i++)
-                {
-                    Spawn();
-                }
+                Spawn();
             }
         }
     }
@@ -86,23 +83,19 @@ public class enemySpawn : MonoBehaviour
     void Update()
     {
         //update time and count 
-        if (instance.startEverythingElse)
+        gameTime = Time.time;
+        int temp = (int)gameTime;
+        if (gameTime >= nextTime)
         {
-            gameTime = Time.time;
-            int temp = (int)gameTime;
-            if (gameTime >= nextTime)
+            if (temp % timeChange == 0 && timeBetweenSpawn > minTime)
             {
-                if (temp % timeChange == 0 && timeBetweenSpawn > minTime)
-                {
-                    timeBetweenSpawn -= amountTimeChange;
-                }
-                if (temp % spawnCountTime == 0 && spawnCount < maxSpawn)
-                {
-                    spawnCount++;
-                }
-                nextTime += 1;
+                timeBetweenSpawn -= amountTimeChange;
             }
-
+            if (temp % spawnCountTime == 0 && spawnCount < maxSpawn)
+            {
+                spawnCount++;
+            }
+            nextTime += 1;
         }
     }
 }

@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
     [Header("Special")]
     [SerializeField] GameObject web;
     [SerializeField] AnimtorEvents events;
+    [SerializeField] Damage damageBox;
 
     [Header("Death")]
     [SerializeField] float fallG;
@@ -132,6 +133,8 @@ public class EnemyController : MonoBehaviour
 
         knockCo = StartCoroutine(KnockIEnum());
         isKnocked = true;
+        damageBox.enabled = false;
+
         knockedRight = this.transform.position.x > player.transform.position.x;
         events.SetHurtState(1); // UPdate animator 
     }
@@ -196,6 +199,7 @@ public class EnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(knockTime);
         isKnocked = false;
+        damageBox.enabled = true;
         events.SetHurtState(0);
     }
 
