@@ -472,9 +472,9 @@ MonoBehaviour:
   groundIdealSpeed: 10
   groundSpeedUpRate: 20
   groundSpeedDownRate: 9
-  airborneIdealSpeed: 4
+  airborneIdealSpeed: 6
   airborneSpeedUpRate: 3
-  airborneSpeedDownRate: 2
+  airborneSpeedDownRate: 1
   jumpForce: 60
   sprite: {fileID: 7066897203388389870}
 --- !u!114 &5201674018376116993
@@ -864,7 +864,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 964717196, guid: 484077d66762f04418dd37fab5508df6, type: 3}
+  m_Sprite: {fileID: -679538905, guid: 1159d74fc26c2ae40a48b658702ed669, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
