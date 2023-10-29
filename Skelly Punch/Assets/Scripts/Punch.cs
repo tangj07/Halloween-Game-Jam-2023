@@ -255,7 +255,7 @@ public class Punch : MonoBehaviour
 
         // Visual 
         GameObject temp = Instantiate(AOEVisual, pos, Quaternion.identity);
-        temp.transform.localScale = new Vector3(AOERange, AOERange, 1.0f);
+        //temp.transform.localScale = new Vector3(AOERange, AOERange, 1.0f);
 
         Collider2D[] explosionHits = Physics2D.OverlapCircleAll(pos, AOERange, enemyLayer);
         for (int e = 0; e < explosionHits.Length; e++)

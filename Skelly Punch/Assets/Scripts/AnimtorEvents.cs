@@ -6,6 +6,8 @@ public class AnimtorEvents : MonoBehaviour
 {
     [SerializeField] Animator animator;
     [SerializeField] Punch puncher;
+    [SerializeField] GameObject punchImpactFX;
+    [SerializeField] Vector3 punchImpactFXPos;
     public void ChangePunchState(int state)
     {
         bool change = state % 2 == 1;
@@ -31,6 +33,23 @@ public class AnimtorEvents : MonoBehaviour
     public void CallPunch()
     {
         puncher.PunchEvent();
+    }
+
+    public void SpawnPunchFX()
+    {
+        bool isTrue = puncher.GetComponent<Player>().FacingRight;
+        GameObject temp = Instantiate(punchImpactFX, this.transform.position + (isTrue ? punchImpactFXPos : new Vector3(-punchImpactFXPos.x, punchImpactFXPos.y, 0)), Quaternion.identity);
+        if(!isTrue)
+        {
+            temp.transform.right = Vector3.left;
+        }
+
+        temp.transform.parent = this.transform.parent;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(this.transform.position + punchImpactFXPos, 0.1f);
     }
 
 }

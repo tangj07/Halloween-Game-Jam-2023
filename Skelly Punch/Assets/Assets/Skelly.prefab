@@ -493,8 +493,8 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  checkOffset: {x: 1.05, y: 1}
-  checkRect: {x: 2.09, y: 1.82}
+  checkOffset: {x: 1.35, y: 1}
+  checkRect: {x: 2.77, y: 1.82}
   knockBackMagCommon: 40
   knockbackMinDir: {x: 1, y: 0.5}
   knockbackMaxDir: {x: 1, y: 2}
@@ -914,6 +914,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 4916996745349077177}
   puncher: {fileID: 5201674018376116993}
+  punchImpactFX: {fileID: 4151540250918424329, guid: 7bc390c71322f2242b0ea47328db6e4d, type: 3}
+  punchImpactFXPos: {x: 1.43, y: 1, z: 0}
 --- !u!1 &8749922108980225846
 GameObject:
   m_ObjectHideFlags: 0

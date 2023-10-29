@@ -60,7 +60,7 @@ public class Pumpkin : MonoBehaviour
         {
             ApplyKnock(hits[i]);
         }
-
+        Instantiate(explosionFX, this.transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 
