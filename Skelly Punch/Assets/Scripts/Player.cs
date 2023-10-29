@@ -104,7 +104,6 @@ public class Player : MonoBehaviour
             down = false;
             gameObject.layer = 7;
         }
-        Debug.Log(down);
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
         {
             // Jumping 

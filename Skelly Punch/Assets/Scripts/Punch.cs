@@ -32,8 +32,11 @@ public class Punch : MonoBehaviour
     [SerializeField] float AOERange = 2.0f;
     [SerializeField] float AOEKnockBackMag;
     [Space]
+    [SerializeField] GameObject pumpkin;
     [SerializeField] float pumpkinTimeDelayMin;
     [SerializeField] float pumpkinTimeDelayMax;
+    [SerializeField] float spawnHeight;
+    [SerializeField] float spawnRange;
     [Space]
     [SerializeField] float speedyKnockBackMag;
     [Space]
@@ -236,6 +239,7 @@ public class Punch : MonoBehaviour
                 ApplyAOE(hits);
                 break;
             case PunchStates.PumpkinDropper:
+                ApplyPumpkin(hits);
                 break;
             case PunchStates.Speed:
                 break;
@@ -272,6 +276,12 @@ public class Punch : MonoBehaviour
         {
             hits[i].GetComponent<EnemyController>().GetWebbed();
         }
+    }
+
+    private void ApplyPumpkin(Collider2D[] hits)
+    {
+        Pumpkin spawn = Instantiate(pumpkin, new Vector3(hits[0].transform.position.x, spawnHeight, 0), Quaternion.identity).GetComponent<Pumpkin>();
+        spawn.FallTowardsTarget(hits[0].transform.position);
     }
 
     /// <summary>
@@ -318,6 +328,10 @@ public class Punch : MonoBehaviour
         // Left
         Gizmos.color = !player.FacingRight ? Color.green : Color.white;
         DrawCheckRect(new Vector2(-checkOffset.x, checkOffset.y), checkRect);
+
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(new Vector3(-spawnRange, spawnHeight), new Vector3(spawnRange, spawnHeight));
     }
 
     private void DrawCheckRect(Vector2 offset, Vector2 rect)
