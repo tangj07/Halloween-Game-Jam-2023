@@ -55,6 +55,9 @@ public class Punch : MonoBehaviour
     [Header("Display")]
     [SerializeField] TextMeshProUGUI punchCountDownMesh;
 
+    [Header("Audio")]
+    [SerializeField] GameObject impact;
+
     private PunchStates holdState;
     private const int STATECOUNT = 5;
     private enum PunchStates
@@ -163,6 +166,8 @@ public class Punch : MonoBehaviour
             // Update the counter 
             punchCounter--;
             punchCountDownMesh.text = (punchCounter).ToString();
+
+            Instantiate(impact, this.transform.position, Quaternion.identity);
         }
         
         for (int i = 0; i < hitEnemies.Length; i++)
