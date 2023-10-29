@@ -477,6 +477,7 @@ MonoBehaviour:
   airborneSpeedDownRate: 1
   jumpForce: 60
   sprite: {fileID: 7066897203388389870}
+  down: 0
 --- !u!114 &5201674018376116993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,8 +505,11 @@ MonoBehaviour:
   AOEVisual: {fileID: 971632773586075660, guid: 87356088f06b24e499b3adfc83af9e34, type: 3}
   AOERange: 5
   AOEKnockBackMag: 60
+  pumpkin: {fileID: 2407846394059989514, guid: e1bd59a905e264c4ebda8141f8390dc2, type: 3}
   pumpkinTimeDelayMin: 0
   pumpkinTimeDelayMax: 0
+  spawnHeight: 12.97
+  spawnRange: 6.75
   speedyKnockBackMag: 80
   stickTime: 0
   events: {fileID: 2986359062362322498}

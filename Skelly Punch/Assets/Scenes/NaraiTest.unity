@@ -1787,18 +1787,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skelly
       objectReference: {fileID: 0}
-    - target: {fileID: 5201674018376116993, guid: e3c8136b5a242c64e9bca2a0dc1533c8, type: 3}
-      propertyPath: pumpkin
-      value: 
-      objectReference: {fileID: 2407846394059989514, guid: e1bd59a905e264c4ebda8141f8390dc2, type: 3}
-    - target: {fileID: 5201674018376116993, guid: e3c8136b5a242c64e9bca2a0dc1533c8, type: 3}
-      propertyPath: spawnRange
-      value: 6.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201674018376116993, guid: e3c8136b5a242c64e9bca2a0dc1533c8, type: 3}
-      propertyPath: spawnHeight
-      value: 12.97
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

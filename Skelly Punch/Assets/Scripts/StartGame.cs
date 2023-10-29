@@ -19,8 +19,8 @@ public class StartGame : MonoBehaviour
 
     void TaskOnClick()
     {
-        top.gameObject.SetActive(false);
-        bottom.gameObject.SetActive(true);
+        top.gameObject.SetActive(true);
+        bottom.gameObject.SetActive(false);
         yourButton.gameObject.SetActive(false);
     }
     // Update is called once per frame
