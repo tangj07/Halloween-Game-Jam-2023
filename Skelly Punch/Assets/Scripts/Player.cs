@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     private bool isGrounded;
     private bool isFacingRight; // Just to know if to reset speed 
 
+    public bool down = false;
     private float currentUnitSpeed; // Percent of speed 
     private float currentSpeed;
     public bool FacingRight { get { return isFacingRight; } }
@@ -94,7 +95,17 @@ public class Player : MonoBehaviour
             currentSpeed = currentUnitSpeed * (isFacingRight ? groundIdealSpeed : -groundIdealSpeed);
         }
 
-        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.S))
+        {
+            down = true;
+            gameObject.layer = 0;
+        }
+        else { 
+            down = false;
+            gameObject.layer = 7;
+        }
+        Debug.Log(down);
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
         {
             // Jumping 
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
