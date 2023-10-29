@@ -57,6 +57,7 @@ public class Punch : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] GameObject impact;
+    [SerializeField] GameObject changeGlove;
 
     private PunchStates holdState;
     private const int STATECOUNT = 5;
@@ -112,6 +113,8 @@ public class Punch : MonoBehaviour
         if(punchCounter <= 0)
         {
             // Change to next state 
+            Instantiate(changeGlove, this.transform.position, Quaternion.identity);
+
             GetNextState(punchState);
             punchCounter = punchesBeforeChange;
 
