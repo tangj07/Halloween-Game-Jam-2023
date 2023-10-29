@@ -240,6 +240,7 @@ public class Punch : MonoBehaviour
             case PunchStates.Speed:
                 break;
             case PunchStates.Web:
+                ApplyWeb(hits);
                 break;
         }
     }
@@ -267,7 +268,10 @@ public class Punch : MonoBehaviour
 
     private void ApplyWeb(Collider2D[] hits)
     {
-
+        for (int i = 0; i < hits.Length; i++)
+        {
+            hits[i].GetComponent<EnemyController>().GetWebbed();
+        }
     }
 
     /// <summary>

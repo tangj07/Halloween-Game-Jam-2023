@@ -14,6 +14,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float reboundForceVerticalMin;
     [SerializeField] float reboundForceVerticalMax;
 
+    [Header("Special")]
+    [SerializeField] GameObject web;
+
     [Header("Death")]
     [SerializeField] float fallG;
     [SerializeField] float fallDrag;
@@ -43,6 +46,8 @@ public class EnemyController : MonoBehaviour
     private bool knockedRight;
     private bool dead;
 
+    private bool webbed = false;
+
     private Coroutine knockCo;
 
     private void Start()
@@ -55,7 +60,7 @@ public class EnemyController : MonoBehaviour
     {
         //rb.AddForce((player.transform.position - this.transform.position).normalized * moveForce);
         
-        if(!isKnocked && !dead)
+        if(!isKnocked && !dead && !webbed)
         {
             Move();
         }
@@ -108,6 +113,9 @@ public class EnemyController : MonoBehaviour
         {
             dead = true;
 
+            // Release position if needed 
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
             this.GetComponent<Collider2D>().enabled = false;
             rb.gravityScale = fallG;
             rb.drag = fallDrag;
@@ -123,11 +131,23 @@ public class EnemyController : MonoBehaviour
         knockedRight = this.transform.position.x > player.transform.position.x;
     }
 
+    public void GetWebbed()
+    {
+        webbed = true;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Wall")
         {
-            if(isKnocked)
+            if(webbed)
+            {
+                // Make unmovable 
+                rb.constraints = RigidbodyConstraints2D.FreezePosition;
+                Vector2 point = Physics2D.ClosestPoint((Vector2)this.transform.position + Vector2.up, collision.transform.GetComponent<Rigidbody2D>());
+                Instantiate(web, point, Quaternion.identity);
+            }
+            else if(isKnocked)
             {
                 rb.AddForce((knockedRight ? Vector2.left : Vector2.right) * Random.Range(reboundForceHorizontalMin, reboundForceHorizontalMax), ForceMode2D.Impulse);
             }
