@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
 
     [Header("Special")]
     [SerializeField] GameObject web;
+    [SerializeField] AnimtorEvents events;
 
     [Header("Death")]
     [SerializeField] float fallG;
@@ -44,7 +45,7 @@ public class EnemyController : MonoBehaviour
 
     private bool isKnocked;
     private bool knockedRight;
-    private bool dead;
+    public bool dead;
 
     private bool webbed = false;
 
@@ -72,6 +73,7 @@ public class EnemyController : MonoBehaviour
         if (isGrounded)
         {
             bool nextFace = player.transform.position.x > this.transform.position.x;
+            spriteRenderer.transform.right = nextFace ? Vector3.right : Vector3.left;
 
             // Reset speed if changing direction 
             if (nextFace != isFacingRight)
@@ -121,6 +123,8 @@ public class EnemyController : MonoBehaviour
             rb.drag = fallDrag;
             rb.AddForce(Vector2.up * Random.Range(upwardForceMin, upwardForceMax), ForceMode2D.Impulse);
 
+            spriteRenderer.sortingOrder = 6;
+
             StartCoroutine(DeathIEnumScale(changeRateScale, targetScale));
             StartCoroutine(DeathIEnumRot(changeRateRot, Random.Range(angleMin, angleMax)));
             StartCoroutine(DeathIEnumColor(changeRateColor, colorTint));
@@ -129,6 +133,7 @@ public class EnemyController : MonoBehaviour
         knockCo = StartCoroutine(KnockIEnum());
         isKnocked = true;
         knockedRight = this.transform.position.x > player.transform.position.x;
+        events.SetHurtState(1); // UPdate animator 
     }
 
     public void GetWebbed()
@@ -191,6 +196,7 @@ public class EnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(knockTime);
         isKnocked = false;
+        events.SetHurtState(0);
     }
 
     private IEnumerator DeathIEnumScale(float rate, Vector3 target)

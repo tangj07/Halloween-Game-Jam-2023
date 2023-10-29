@@ -36,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 1552795708867567056}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8432308215302693852
 MonoBehaviour:
@@ -51,9 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2983988902421934916}
-  jumpIn: 1
-  jumpDistanceX: 20
-  jumpDistanceY: 30
+  jumpDistanceX: 40
+  jumpDistanceY: 60
   startPosition: {x: 0, y: 0, z: 0}
   direction: 0
   enterStart: -4
@@ -81,7 +80,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 1
+  m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -142,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e503ac0fd2c5ebf4eb7ff791c80d56d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 2
   idealSpeed: 2
   speedUpRate: 1
   knockTime: 1
@@ -151,6 +150,7 @@ MonoBehaviour:
   reboundForceVerticalMin: 10
   reboundForceVerticalMax: 20
   web: {fileID: 971632773586075660, guid: 87356088f06b24e499b3adfc83af9e34, type: 3}
+  events: {fileID: 8380623100389244982}
   fallG: 20
   fallDrag: 1
   upwardForceMin: 40
@@ -209,8 +209,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  colorTint: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 0.64705884}
+  colorTint: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
   changeRateColor: 20
+  dead: 0
 --- !u!114 &-5638140441520311178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +286,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1552795708867567056}
   - component: {fileID: 6834911616551324706}
+  - component: {fileID: 8331361123468955236}
+  - component: {fileID: 8380623100389244982}
   m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
@@ -348,7 +351,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6d2855aea178e814586059e5457f4ac0, type: 3}
+  m_Sprite: {fileID: -436723827, guid: 425604a9705eb67459f8ea0d7b4b81be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -359,3 +362,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8331361123468955236
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5253940930894963747}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69484dd0e003a7e4d80020a857f2e75a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8380623100389244982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5253940930894963747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 108c73acd1d6d1e4fbfb08908bf7a978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 8331361123468955236}
+  puncher: {fileID: 0}

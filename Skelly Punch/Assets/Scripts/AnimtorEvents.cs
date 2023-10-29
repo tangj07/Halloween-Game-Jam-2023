@@ -12,6 +12,12 @@ public class AnimtorEvents : MonoBehaviour
         animator.SetBool("isPunching", change);
     }
 
+    public void SetHurtState(int state)
+    {
+        bool change = state % 2 == 1;
+        animator.SetBool("isHurt", change);
+    }
+
     /// <summary>
     /// Blend from 0-1
     /// </summary>
