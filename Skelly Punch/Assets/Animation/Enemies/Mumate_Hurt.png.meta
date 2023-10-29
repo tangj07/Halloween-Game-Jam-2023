@@ -156,15 +156,15 @@ TextureImporter:
         y: 800
         width: 800
         height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2e1120ebcac7e642875ebd87fbbbc14
-      internalID: 881278287
+      spriteID: 631104c4c8aa6b84fb03113b714cde8f
+      internalID: -307400410
       vertices: []
       indices: 
       edges: []
@@ -177,15 +177,15 @@ TextureImporter:
         y: 800
         width: 800
         height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b01695dd01ff141448efecf6672b8d22
-      internalID: -437525667
+      spriteID: 71e93d45772f3214aa03bd24cdebc59a
+      internalID: -145720046
       vertices: []
       indices: 
       edges: []
@@ -198,15 +198,15 @@ TextureImporter:
         y: 800
         width: 800
         height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44520fe8c2063d64e823f593cab08942
-      internalID: 689946322
+      spriteID: 9240a73a2405b404c943550e7e1514f5
+      internalID: -1109799188
       vertices: []
       indices: 
       edges: []
@@ -219,15 +219,15 @@ TextureImporter:
         y: 800
         width: 800
         height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee2da2e99b3157d4c9e90bf92ac93668
-      internalID: 377257169
+      spriteID: 1c598286dc020034888555515fe14668
+      internalID: -386043747
       vertices: []
       indices: 
       edges: []
@@ -240,15 +240,15 @@ TextureImporter:
         y: 800
         width: 800
         height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86abfd43b1a6dc243adc3ce25fc63aa9
-      internalID: -1270707215
+      spriteID: 025eea7c6dd88f8429e6aa11f51860da
+      internalID: 1300849443
       vertices: []
       indices: 
       edges: []
@@ -257,19 +257,19 @@ TextureImporter:
       name: Mumate_Hurt_5
       rect:
         serializedVersion: 2
-        x: 6400
+        x: 4000
         y: 800
         width: 800
         height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9c2869c1d9839c47ab7fc4b5648cbbd
-      internalID: 1925543013
+      spriteID: 6fd890c5871037544aac4dcc6a356d15
+      internalID: 1684157252
       vertices: []
       indices: 
       edges: []
@@ -278,19 +278,19 @@ TextureImporter:
       name: Mumate_Hurt_6
       rect:
         serializedVersion: 2
-        x: 7200
+        x: 4800
         y: 800
         width: 800
         height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db9be699f44c0914997542f885acee7b
-      internalID: 2062432963
+      spriteID: cfa16fa9304560843b95da4a155f7362
+      internalID: 1478406561
       vertices: []
       indices: 
       edges: []
@@ -299,19 +299,19 @@ TextureImporter:
       name: Mumate_Hurt_7
       rect:
         serializedVersion: 2
-        x: 8000
+        x: 5600
         y: 800
         width: 800
         height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8dd60ba92846d844486b2b386118b8cb
-      internalID: 1439339816
+      spriteID: 5cf4c3dea75ed38468011d4ed7ff8f0a
+      internalID: -1156163688
       vertices: []
       indices: 
       edges: []
@@ -320,19 +320,19 @@ TextureImporter:
       name: Mumate_Hurt_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 6400
+        y: 800
         width: 800
         height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23a566125d461764f825021275895623
-      internalID: -1058501253
+      spriteID: ef11b7663d80c2a4bb45ee29eaea383c
+      internalID: -1536602964
       vertices: []
       indices: 
       edges: []
@@ -341,19 +341,19 @@ TextureImporter:
       name: Mumate_Hurt_9
       rect:
         serializedVersion: 2
-        x: 800
-        y: 0
+        x: 7200
+        y: 800
         width: 800
         height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4593857424d83e04199cebc34c60dd24
-      internalID: 677418263
+      spriteID: 6f31d0be57e4da5438ff03d3e5b1efa3
+      internalID: 1404386882
       vertices: []
       indices: 
       edges: []
@@ -362,19 +362,19 @@ TextureImporter:
       name: Mumate_Hurt_10
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 0
+        x: 8000
+        y: 800
         width: 800
         height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2f5bf4c3fa0520498607cd81cec932f
-      internalID: -393433148
+      spriteID: c655c060ac26dd349adccb20c2513242
+      internalID: -2063367673
       vertices: []
       indices: 
       edges: []
@@ -383,19 +383,19 @@ TextureImporter:
       name: Mumate_Hurt_11
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 0
+        x: 8800
+        y: 800
         width: 800
         height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd0ef8279a037464d961e08a6e857d44
-      internalID: 1652490127
+      spriteID: c7cbe1969aa6a4444827ef62a447a38a
+      internalID: 420164267
       vertices: []
       indices: 
       edges: []
@@ -404,19 +404,19 @@ TextureImporter:
       name: Mumate_Hurt_12
       rect:
         serializedVersion: 2
-        x: 3200
+        x: 0
         y: 0
         width: 800
         height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51194d376b63d33409cf8ba6368ec9f0
-      internalID: -456876276
+      spriteID: 3c66801ae5f99de49a48ff1a014256db
+      internalID: -24207540
       vertices: []
       indices: 
       edges: []
@@ -425,19 +425,19 @@ TextureImporter:
       name: Mumate_Hurt_13
       rect:
         serializedVersion: 2
-        x: 6400
+        x: 800
         y: 0
         width: 800
         height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eda86381a5ee68e4aab8854add7ad964
-      internalID: -1080917805
+      spriteID: 1fd4df7fc796ec248a76b97fdef73270
+      internalID: -98222132
       vertices: []
       indices: 
       edges: []
@@ -446,19 +446,19 @@ TextureImporter:
       name: Mumate_Hurt_14
       rect:
         serializedVersion: 2
-        x: 7200
+        x: 1600
         y: 0
         width: 800
         height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fdf734afb94fe744929cdc855ab5373
-      internalID: -733633361
+      spriteID: 808f893c0e1e9f14781e55a634b9699f
+      internalID: -1270764192
       vertices: []
       indices: 
       edges: []
@@ -467,19 +467,166 @@ TextureImporter:
       name: Mumate_Hurt_15
       rect:
         serializedVersion: 2
-        x: 8000
+        x: 2400
         y: 0
         width: 800
         height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3335f6af723f2a94eafe56a0a910367f
-      internalID: -1261560356
+      spriteID: 86e8b39cbdb13f3438cf943c0f96b6f6
+      internalID: -1189055724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mumate_Hurt_16
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 800
+        height: 800
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b082d1a5cb58ee41b351237311ca62e
+      internalID: 1010061715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mumate_Hurt_17
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 800
+        height: 800
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88b03b19f71403042822d6ad31df4ba0
+      internalID: -1679822074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mumate_Hurt_18
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 800
+        height: 800
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a737aae27137c4b9b07df3a1d578f5
+      internalID: -715033126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mumate_Hurt_19
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 0
+        width: 800
+        height: 800
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a61b6931d64c17e44bd1733664a5b385
+      internalID: -1056589235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mumate_Hurt_20
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 0
+        width: 800
+        height: 800
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 111b5840d90a4d842a4d85849c20413a
+      internalID: 291091763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mumate_Hurt_21
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 0
+        width: 800
+        height: 800
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27f59fa164cc25458da78937db02a36
+      internalID: 197011035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mumate_Hurt_22
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 0
+        width: 800
+        height: 800
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a97e7985f6bd8b40869993d41689a96
+      internalID: -622721485
       vertices: []
       indices: 
       edges: []
@@ -495,22 +642,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mumate_Hurt_0: 881278287
-      Mumate_Hurt_1: -437525667
-      Mumate_Hurt_10: -393433148
-      Mumate_Hurt_11: 1652490127
-      Mumate_Hurt_12: -456876276
-      Mumate_Hurt_13: -1080917805
-      Mumate_Hurt_14: -733633361
-      Mumate_Hurt_15: -1261560356
-      Mumate_Hurt_2: 689946322
-      Mumate_Hurt_3: 377257169
-      Mumate_Hurt_4: -1270707215
-      Mumate_Hurt_5: 1925543013
-      Mumate_Hurt_6: 2062432963
-      Mumate_Hurt_7: 1439339816
-      Mumate_Hurt_8: -1058501253
-      Mumate_Hurt_9: 677418263
+      Mumate_Hurt_0: -307400410
+      Mumate_Hurt_1: -145720046
+      Mumate_Hurt_10: -2063367673
+      Mumate_Hurt_11: 420164267
+      Mumate_Hurt_12: -24207540
+      Mumate_Hurt_13: -98222132
+      Mumate_Hurt_14: -1270764192
+      Mumate_Hurt_15: -1189055724
+      Mumate_Hurt_16: 1010061715
+      Mumate_Hurt_17: -1679822074
+      Mumate_Hurt_18: -715033126
+      Mumate_Hurt_19: -1056589235
+      Mumate_Hurt_2: -1109799188
+      Mumate_Hurt_20: 291091763
+      Mumate_Hurt_21: 197011035
+      Mumate_Hurt_22: -622721485
+      Mumate_Hurt_23: 1331099962
+      Mumate_Hurt_3: -386043747
+      Mumate_Hurt_4: 1300849443
+      Mumate_Hurt_5: 1684157252
+      Mumate_Hurt_6: 1478406561
+      Mumate_Hurt_7: -1156163688
+      Mumate_Hurt_8: -1536602964
+      Mumate_Hurt_9: 1404386882
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
