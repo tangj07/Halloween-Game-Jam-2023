@@ -80,6 +80,8 @@ public class Punch : MonoBehaviour
 
     private int punchCounter;
 
+    public float GetState {  get { return (float)punchState / STATECOUNT; } }
+
 
     // Juice variables
     private Coroutine slowCo;

@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEditor.PackageManager;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject DeathDisplay;
     [SerializeField] TextMeshPro finalTimeMesh;
+    [SerializeField] AnimtorEvents events;
     [Space]
     [SerializeField] GameObject playItems;
 
@@ -45,9 +47,11 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameStates.Dead;
 
+
         finalTimeMesh.text = "You Survived for " + (int)timer + "[s]";
         DeathDisplay.SetActive(true);
 
+        events.ChangePunchTypeState(GameObject.FindObjectOfType<Punch>().GetState);
     }
 
     private void Start()
