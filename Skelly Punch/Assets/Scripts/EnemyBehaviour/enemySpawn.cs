@@ -17,7 +17,8 @@ public class enemySpawn : MonoBehaviour
     Vector3 spawnPoint3 = Vector3.zero;
     [SerializeField]
     Vector3 spawnPoint4 = Vector3.zero;
-
+    [SerializeField]
+    StartGame instance;
     public float gameTime =0;
     public float timeChange = 2f; //2 sec for now
     public float timeBetweenSpawn =4f; //gradually gets smaller 
@@ -72,30 +73,36 @@ public class enemySpawn : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(timeBetweenSpawn);
-            for (int i = 0; i < spawnCount; i++)
+            if (instance.startEverythingElse)
             {
-                Spawn();
+                for (int i = 0; i < spawnCount; i++)
+                {
+                    Spawn();
+                }
             }
         }
     }
     // Update is called once per frame
     void Update()
     {
-       //update time and count 
-       gameTime = Time.time;
-        int temp = (int)gameTime;
-        if(gameTime >= nextTime)
+        //update time and count 
+        if (instance.startEverythingElse)
         {
-            if (temp % timeChange == 0 && timeBetweenSpawn > minTime)
+            gameTime = Time.time;
+            int temp = (int)gameTime;
+            if (gameTime >= nextTime)
             {
-                timeBetweenSpawn -= amountTimeChange;
+                if (temp % timeChange == 0 && timeBetweenSpawn > minTime)
+                {
+                    timeBetweenSpawn -= amountTimeChange;
+                }
+                if (temp % spawnCountTime == 0 && spawnCount < maxSpawn)
+                {
+                    spawnCount++;
+                }
+                nextTime += 1;
             }
-            if (temp % spawnCountTime == 0&& spawnCount<maxSpawn)
-            {
-                spawnCount++;
-            }
-            nextTime += 1;
+
         }
-       
     }
 }

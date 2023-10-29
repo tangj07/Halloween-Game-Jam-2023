@@ -10,7 +10,7 @@ public class StartGame : MonoBehaviour
     public CinemachineVirtualCamera top;
     public CinemachineVirtualCamera bottom;
     public Button yourButton;
-
+    public bool startEverythingElse = false;
     void Start()
     {
         Button btn = yourButton.GetComponent<Button>();
@@ -22,6 +22,7 @@ public class StartGame : MonoBehaviour
         top.gameObject.SetActive(true);
         bottom.gameObject.SetActive(false);
         yourButton.gameObject.SetActive(false);
+        startEverythingElse = true;
     }
     // Update is called once per frame
     void Update()

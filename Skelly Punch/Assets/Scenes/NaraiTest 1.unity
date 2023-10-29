@@ -470,6 +470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607f594d080ec4745b6806b79c29c656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  collide: {fileID: 0}
 --- !u!1 &141289858
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +830,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607f594d080ec4745b6806b79c29c656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  collide: {fileID: 0}
 --- !u!1 &459104506
 GameObject:
   m_ObjectHideFlags: 3
@@ -1887,6 +1891,7 @@ MonoBehaviour:
   spawnPoint2: {x: -8, y: -4, z: 0}
   spawnPoint3: {x: 8, y: -1, z: 0}
   spawnPoint4: {x: 8, y: -4, z: 0}
+  instance: {fileID: 1347549982}
   gameTime: 0
   timeChange: 5
   timeBetweenSpawn: 4
@@ -1910,6 +1915,7 @@ MonoBehaviour:
   top: {fileID: 781990431}
   bottom: {fileID: 76228278}
   yourButton: {fileID: 1903321554}
+  startEverythingElse: 0
 --- !u!114 &1347549983
 MonoBehaviour:
   m_ObjectHideFlags: 0
