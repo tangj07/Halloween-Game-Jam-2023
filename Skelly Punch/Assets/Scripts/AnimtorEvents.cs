@@ -12,6 +12,16 @@ public class AnimtorEvents : MonoBehaviour
         animator.SetBool("isPunching", change);
     }
 
+    /// <summary>
+    /// Blend from 0-1
+    /// </summary>
+    /// <param name="value"></param>
+    public void ChangePunchTypeState(float value)
+    {
+        value = Mathf.Clamp01(value);
+        animator.SetFloat("Blend", value);
+    }
+
     public void CallPunch()
     {
         puncher.PunchEvent();
