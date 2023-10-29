@@ -552,6 +552,7 @@ MonoBehaviour:
   impForce: 0.1
   punchCountDownMesh: {fileID: 8784199406142419944}
   impact: {fileID: 7133100991445519401, guid: 1e9b1638184d2e4469a908da06dc19ce, type: 3}
+  changeGlove: {fileID: 6225023542953969991, guid: 0c41c693129f30f43aff51e37b948d70, type: 3}
 --- !u!50 &2368192781927199411
 Rigidbody2D:
   serializedVersion: 4
