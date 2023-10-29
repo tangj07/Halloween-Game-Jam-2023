@@ -502,7 +502,7 @@ MonoBehaviour:
   player: {fileID: 8797907268076715620}
   punchState: 0
   punchesBeforeChange: 5
-  AOEVisual: {fileID: 971632773586075660, guid: 87356088f06b24e499b3adfc83af9e34, type: 3}
+  AOEVisual: {fileID: 971632773586075660, guid: 409cf44ebecce9a4f9e3a6bc72d1efb5, type: 3}
   AOERange: 5
   AOEKnockBackMag: 60
   pumpkin: {fileID: 2407846394059989514, guid: e1bd59a905e264c4ebda8141f8390dc2, type: 3}

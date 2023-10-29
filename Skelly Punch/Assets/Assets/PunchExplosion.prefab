@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3465254100997662765}
   - component: {fileID: 1565206732377197445}
   m_Layer: 0
-  m_Name: PumpExplode
+  m_Name: PunchExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ Animator:
   m_GameObject: {fileID: 971632773586075660}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3d285b6ce1f1b134a8b0b7082f3e6acf, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1b9e14fb562f2ce41a1b01b97edc676c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
