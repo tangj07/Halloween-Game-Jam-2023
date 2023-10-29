@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public Rigidbody2D rb;
     public bool jumpIn = true;
-    float jumpDistanceX = 6, jumpDistanceY=10;
+    [SerializeField] float jumpDistanceX = 6, jumpDistanceY=10;
     public Vector3 startPosition;
     public float direction = 1;
     public float enterStart, enterEnd;
@@ -37,13 +37,13 @@ public class Enemy : MonoBehaviour
             rb.AddForce(new Vector3(direction, jumpDistanceY), ForceMode2D.Impulse);
             jumpIn = false;
         }
-        if(gameObject.transform.position.x < enterStart  && startPosition.x < 0)
+/*        if(gameObject.transform.position.x < enterStart  && startPosition.x < 0)
         {
             gameObject.GetComponent<Rigidbody2D>().freezeRotation = true;
         }
         if(gameObject.transform.position.x > enterEnd && startPosition.x > 0)
         {
             gameObject.GetComponent<Rigidbody2D>().freezeRotation = true;
-        }
+        }*/
     }
 }

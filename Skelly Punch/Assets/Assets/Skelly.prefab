@@ -493,7 +493,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   checkOffset: {x: 0.84, y: 1}
-  checkRect: {x: 1.61, y: 1.18}
+  checkRect: {x: 1.61, y: 1.82}
   knockBackMagCommon: 40
   knockbackMinDir: {x: 1, y: 0.5}
   knockbackMaxDir: {x: 1, y: 2}
